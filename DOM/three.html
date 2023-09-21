@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+
+    
+</body>
+<script>
+    function addElements(data) {
+    const div = document.createElement('div')
+    console.log(div);
+    div.id = "test"
+    div.className = "test-class"
+    div.setAttribute("title","generated")
+    div.style.backgroundColor = data.color
+    div.style.padding = "20px"
+    // div.innerHTML = "Programming all day"
+    const addText = document.createTextNode(data.text)
+    div.appendChild(addText)
+    document.body.appendChild(div)
+    }
+
+    const elementProperties = [
+        {
+            text:"one",
+            color:"red"
+        },
+        {
+            text:"two",
+            color:"blue"
+        },
+        {
+            text:"three",
+            color:"lightpink"
+        }
+    ]
+
+    elementProperties.forEach( (item) => {
+        addElements(item)
+    })
+
+</script>
+</html>
