@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="insert-data"></div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/medashabari'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requestURL)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState===4){
+            const response = this.responseText // this return the string we need to conver to json
+            console.log(typeof response)
+            const json_data = JSON.parse(response)
+        
+            const data_insert = document.querySelector('.insert-data')
+            data_insert.innerHTML = `
+            <img src = ${json_data.avatar_url}>
+            <h2>${json_data.bio}</h2>
+            <h2>${json_data.followers}</h2>
+            <h2>${json_data.following}</h2>
+            `
+        }
+    }
+    xhr.send()
+   
+</script>
+</html>
