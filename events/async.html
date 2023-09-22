@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>operations</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //setTimeout(function(){
+     //   console.log("after 2 seconds")
+    // },2000)
+
+    // const sayShabari = function(){
+    //     console.log("shabarish")
+    // }
+    // setTimeout(sayShabari,2000)
+
+    // changing the element of afyer timeour
+
+    const changeh1text = function(){
+        document.querySelector('h1').innerText = "Async Operations"
+    }
+
+    setTimeout(changeh1text,2000)
+</script>
+</html>
